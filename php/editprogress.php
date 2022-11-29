@@ -1,14 +1,14 @@
 <?php
     include('../php/conn.php');
 $exerc_id = $_GET["id"];
-$excer = mysqli_query ($conexion,"SELECT * FROM food2 WHERE food_id = '$exerc_id'");
+$excer = mysqli_query ($conexion,"SELECT * FROM progress WHERE prog_id = '$exerc_id'");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Editar Alimento - FITPLUS</title>
+	<title>Editar Ejercicio - FITPLUS</title>
 	<!-- <link rel="stylesheet" href="tabla.css"> -->
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
 	<style>
@@ -80,22 +80,22 @@ $excer = mysqli_query ($conexion,"SELECT * FROM food2 WHERE food_id = '$exerc_id
 	<body>
 
 
-	 <form action="updtfood2.php" method="post">
+	 <form action="updtprogress.php" method="post">
 
 			<?php $resultado = $excer;
 			while($row=mysqli_fetch_assoc($resultado)) { ?>	
 
-		<h2 class="ContainerTitle">Modificacion de Alimento</h2>
+		<h2 class="ContainerTitle">Modificacion de Progreso</h2>
 		
-		<input type="hidden"  value ="<?php echo $row["food_id"];?>"  name="exerc_id" class="field"> <br/>	
-		<p>Nombre del Alimento:</p>
-		<input type="text" value ="<?php echo $row["fname"];?>"  name="ename" class="field"> <br/>
+		<input type="hidden"  value ="<?php echo $row["prog_id"];?>"  name="exerc_id" class="field"> <br/>	
+		<p>Nombre ejercicio:</p>
+		<input type="text" value ="<?php echo $row["ename"];?>"  name="ename" class="field"> <br/>
 
-		<p>Proteínas:</p>
-		<input type="text" value ="<?php echo $row["prot"];?>"  name="reps" class="field" > <br/>
+		<p>Peso Inicial:</p>
+		<input type="text" value ="<?php echo $row["w1"];?>"  name="reps" class="field" > <br/>
 		
-		<p>Calorías:</p>
-		<input type="text" value ="<?php echo $row["cals"];?>"  name="ser"  class="field"> <br/>
+		<p>Peso Actual:</p>
+		<input type="text" value ="<?php echo $row["w2"];?>"  name="ser"  class="field"> <br/>
 
 
 

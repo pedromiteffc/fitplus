@@ -7,13 +7,13 @@
     $ex1rep = $_POST['ex1-rep'];
     $ex1ser = $_POST['ex1-ser'];
     
-    $ins = "INSERT INTO food (fname, prot, cals) VALUES ( '$ex1name', '$ex1rep', '$ex1ser')";
+    $ins = "INSERT INTO food2 (fname, prot, cals) VALUES ( '$ex1name', '$ex1rep', '$ex1ser')";
     $res = mysqli_query($conexion, $ins);
 
     if ($res)
     {
         echo"<script>alert('Se han registrado los datos con exito')</script>";
-        header('location: /t2/desayuno.php');
+        header('location: /t2/almuerzo.php');
     }
     else
     {
